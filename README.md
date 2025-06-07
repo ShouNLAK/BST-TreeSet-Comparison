@@ -9,6 +9,13 @@ This project benchmarks the performance of a custom **Binary Search Tree (BST)**
 📌 **Regular Case:** Balanced operations with **O(log n)** performance.  
 📌 **Worst Case:** BST degrades to **O(n)** when unbalanced, while `TreeSet` remains **O(log n)** consistently.  
 
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/4a6d94cf-bebf-4441-be18-02ce2a5e8199" alt="GeeksforGeeks Image">
+    <br>
+    <b>From <a href="https://www.geeksforgeeks.org/what-does-big-o-olog-n-complexity-mean/">GeeksforGeeks</a></b>
+</div>
+
+
 ⚠️ _This project is a student endeavor; results may not reflect industrial-grade precision._
 
 ---
@@ -17,7 +24,7 @@ This project benchmarks the performance of a custom **Binary Search Tree (BST)**
 - [🔍 Overview](#overview)  
 - [📊 Benchmark Details](#benchmark-details)  
 - [🚀 How to Run](#how-to-run)  
-
+- [❓ Q & A](#Q-&-A)
 ---
 
 ## 📊 **Benchmark Details**  
@@ -61,6 +68,38 @@ java -jar build/libs/BSTvsTreeSet.jar
 - Enter the test size  
 - Benchmark runs for **Insertion**, **Finding**, & **Deletion**  
 - Results summary displayed  
+
+---
+
+## ❓ **Q & A**
+
+🔸 **Q:** Why compare BST vs. TreeSet?
+
+**A:** BST is a fundamental data structure in computer science, but Java’s TreeSet offers built-in balancing. This benchmark helps analyze their performance in real-world scenarios.
+
+🔸 **Q:** What is the worst-case scenario for BST?
+
+**A:** If data is inserted in an almost sorted order, the BST becomes a **skewed tree** (similar to a linked list), degrading performance to **O(n)** instead of **O(log n)**.
+
+### Worst-Case Scenario: BST vs. TreeSet  
+
+| **TreeSet** (Self-Balancing) | **BST** (Unbalanced) |
+|-----------------------------|----------------------|
+| ![TreeSet](https://github.com/user-attachments/assets/d3fc1d59-f961-48a2-a0ab-0e4fdf5b4c37) | ![BST](https://github.com/user-attachments/assets/f2f05078-c74d-4298-b98f-b2d28c8c4ad3) |
+| **Maintains O(log n)** even with sorted insertions | **Degrades to O(n)** when inserted in order |
+
+
+🔸 **Q:** Why does TreeSet maintain better performance?
+
+**A:** TreeSet uses a **Red-Black Tree**, a self-balancing binary search tree that ensures **O(log n)** complexity for **insertion, search, and deletion** operations.
+
+🔸 **Q:** Does the benchmark consider memory usage?
+
+**A:** This version primarily focuses on execution speed. Future improvements could integrate memory profiling.
+
+🔸 **Q:** Can I use this for production-level analysis?
+
+**A:** Since this is a student project, results might not be precise enough for high-stakes applications. However, it serves as a solid learning tool.
 
 ---
 
